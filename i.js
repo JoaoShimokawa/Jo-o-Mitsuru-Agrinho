@@ -2,149 +2,129 @@ let produtos = [
   // Frutas
   { nome: "Maçã", tipo: "frutas", regiao: "Sul" },
   { nome: "Banana", tipo: "frutas", regiao: "Sudeste" },
-  { nome: "Laranja", tipo: "frutas", regiao: "Nordeste" },
-  { nome: "Abacaxi", tipo: "frutas", regiao: "Norte" },
-  { nome: "Mamão", tipo: "frutas", regiao: "Centro-Oeste" },
+  { nome: "Laranja", tipo: "frutas", regiao: "Sudeste" },
+  { nome: "Abacaxi", tipo: "frutas", regiao: "Nordeste" },
   { nome: "Manga", tipo: "frutas", regiao: "Nordeste" },
   { nome: "Uva", tipo: "frutas", regiao: "Sul" },
+  { nome: "Pera", tipo: "frutas", regiao: "Sul" },
   { nome: "Melancia", tipo: "frutas", regiao: "Centro-Oeste" },
-  { nome: "Pêssego", tipo: "frutas", regiao: "Sul" },
+  { nome: "Mamão", tipo: "frutas", regiao: "Nordeste" },
   { nome: "Caju", tipo: "frutas", regiao: "Nordeste" },
+  { nome: "Goiaba", tipo: "frutas", regiao: "Sudeste" },
 
   // Hortaliças
   { nome: "Alface", tipo: "hortaliças", regiao: "Centro-Oeste" },
   { nome: "Couve", tipo: "hortaliças", regiao: "Sudeste" },
-  { nome: "Rúcula", tipo: "hortaliças", regiao: "Sul" },
   { nome: "Espinafre", tipo: "hortaliças", regiao: "Sul" },
+  { nome: "Rúcula", tipo: "hortaliças", regiao: "Sudeste" },
   { nome: "Agrião", tipo: "hortaliças", regiao: "Sudeste" },
-  { nome: "Almeirão", tipo: "hortaliças", regiao: "Centro-Oeste" },
-  { nome: "Salsa", tipo: "hortaliças", regiao: "Norte" },
-  { nome: "Cebolinha", tipo: "hortaliças", regiao: "Nordeste" },
-  { nome: "Coentro", tipo: "hortaliças", regiao: "Nordeste" },
-  { nome: "Chicória", tipo: "hortaliças", regiao: "Sudeste" },
+  { nome: "Repolho", tipo: "hortaliças", regiao: "Sul" },
+  { nome: "Cenoura", tipo: "hortaliças", regiao: "Centro-Oeste" },
+  { nome: "Beterraba", tipo: "hortaliças", regiao: "Sul" },
+  { nome: "Pimentão", tipo: "hortaliças", regiao: "Nordeste" },
+  { nome: "Tomate", tipo: "hortaliças", regiao: "Sudeste" },
+  { nome: "Abóbora", tipo: "hortaliças", regiao: "Nordeste" },
 
   // Queijos
   { nome: "Queijo Minas", tipo: "queijos", regiao: "Minas Gerais" },
   { nome: "Queijo Coalho", tipo: "queijos", regiao: "Nordeste" },
-  { nome: "Queijo Prato", tipo: "queijos", regiao: "Sudeste" },
+  { nome: "Queijo Prato", tipo: "queijos", regiao: "Sul" },
+  { nome: "Queijo Mussarela", tipo: "queijos", regiao: "Sudeste" },
   { nome: "Queijo Parmesão", tipo: "queijos", regiao: "Sul" },
-  { nome: "Queijo Gorgonzola", tipo: "queijos", regiao: "Sul" },
-  { nome: "Queijo Brie", tipo: "queijos", regiao: "Sudeste" },
+  { nome: "Queijo Gorgonzola", tipo: "queijos", regiao: "Sudeste" },
   { nome: "Queijo Canastra", tipo: "queijos", regiao: "Minas Gerais" },
-  { nome: "Queijo Reino", tipo: "queijos", regiao: "Nordeste" },
   { nome: "Queijo Meia Cura", tipo: "queijos", regiao: "Minas Gerais" },
+  { nome: "Queijo Reino", tipo: "queijos", regiao: "Nordeste" },
+  { nome: "Queijo Brie", tipo: "queijos", regiao: "Sudeste" },
   { nome: "Queijo Azul", tipo: "queijos", regiao: "Sul" },
 
   // Grãos
-  { nome: "Feijão", tipo: "grãos", regiao: "Sudeste" },
   { nome: "Arroz", tipo: "grãos", regiao: "Sul" },
+  { nome: "Feijão", tipo: "grãos", regiao: "Sudeste" },
   { nome: "Milho", tipo: "grãos", regiao: "Centro-Oeste" },
   { nome: "Soja", tipo: "grãos", regiao: "Centro-Oeste" },
+  { nome: "Lentilha", tipo: "grãos", regiao: "Sul" },
+  { nome: "Grão-de-bico", tipo: "grãos", regiao: "Sudeste" },
+  { nome: "Ervilha", tipo: "grãos", regiao: "Sul" },
   { nome: "Trigo", tipo: "grãos", regiao: "Sul" },
   { nome: "Cevada", tipo: "grãos", regiao: "Sul" },
-  { nome: "Lentilha", tipo: "grãos", regiao: "Sudeste" },
-  { nome: "Grão-de-bico", tipo: "grãos", regiao: "Norte" },
   { nome: "Sorgo", tipo: "grãos", regiao: "Centro-Oeste" },
-  { nome: "Aveia", tipo: "grãos", regiao: "Sul" }
+  { nome: "Amendoim", tipo: "grãos", regiao: "Sudeste" }
 ];
 
 let tipoSelecionado = "todos";
 let botoes = [];
 
 function setup() {
-  createCanvas(900, 600);
+  createCanvas(800, 3700);
   textFont('Arial');
-
-  // Botões de filtro
-  botoes.push(new BotaoFiltro("Todos", 30, 20, "todos"));
-  botoes.push(new BotaoFiltro("Frutas", 140, 20, "frutas"));
-  botoes.push(new BotaoFiltro("Hortaliças", 250, 20, "hortaliças"));
+  botoes.push(new BotaoFiltro("Todos", 50, 20, "todos"));
+  botoes.push(new BotaoFiltro("Frutas", 160, 20, "frutas"));
+  botoes.push(new BotaoFiltro("Hortaliças", 270, 20, "hortaliças"));
   botoes.push(new BotaoFiltro("Queijos", 380, 20, "queijos"));
-  botoes.push(new BotaoFiltro("Grãos", 500, 20, "grãos"));
+  botoes.push(new BotaoFiltro("Grãos", 490, 20, "grãos"));
 }
 
 function draw() {
-  desenharCenario();
-
+  background(245);
+  
+  // Título
   fill(30);
-  textSize(26);
-  text("Produtos do Campo", 40, 90);
+  textSize(24);
+  text("Produtos do Campo", 50, 70);
 
+  // Botões
   for (let botao of botoes) {
     botao.mostrar();
   }
 
-  let y = 140;
-  textSize(18);
-  for (let produto of produtos) {
-    if (tipoSelecionado === "todos" || produto.tipo === tipoSelecionado) {
-      fill(30);
-      text(`• ${produto.nome} (${produto.regiao})`, 50, y);
-      y += 26;
-      if (y > height - 40) {
-        text("...mais produtos abaixo", 50, y);
-        break;
-      }
+  // Lista de produtos filtrados
+  let y = 120;
+  for (let p of produtos) {
+    if (tipoSelecionado === "todos" || p.tipo === tipoSelecionado) {
+      desenharProduto(p, y);
+      y += 80;
     }
   }
 }
 
-function desenharCenario() {
-  // Céu
-  background('#87CEEB');
-
-  // Sol
-  fill('#FFD700');
-  noStroke();
-  ellipse(800, 80, 100, 100);
-
-  // Grama
-  fill('#7CFC00');
-  rect(0, height * 0.5, width, height * 0.5);
-
-  // Casinha
-  fill('#DEB887');
-  rect(700, 320, 120, 100);
-  fill('#8B4513');
-  triangle(690, 320, 760, 260, 830, 320);
-  fill(0);
-  rect(735, 360, 30, 60); // porta
-
-  // Árvore
-  fill('#8B4513');
-  rect(100, 350, 20, 60);
-  fill('#228B22');
-  ellipse(110, 340, 60, 60);
-
-  // Galinha (simples)
-  fill('white');
-  ellipse(180, 520, 30, 20);
-  fill('red');
-  triangle(195, 520, 205, 515, 205, 525);
-
-  // Cerca
-  for (let i = 0; i < width; i += 30) {
-    fill('#A0522D');
-    rect(i, 480, 10, 40);
-    rect(i, 500, 30, 5);
+function mousePressed() {
+  for (let botao of botoes) {
+    if (botao.estaClicado(mouseX, mouseY)) {
+      tipoSelecionado = botao.tipo;
+    }
   }
 }
 
-// Classe dos botões
+function desenharProduto(produto, y) {
+  fill(255);
+  stroke(200);
+  rect(50, y, 700, 60, 10);
+  
+  fill(50);
+  noStroke();
+  textSize(16);
+  textAlign(LEFT);
+  text(`Produto: ${produto.nome}`, 70, y + 22);
+  text(`Tipo: ${produto.tipo}`, 300, y + 22);
+  text(`Região: ${produto.regiao}`, 500, y + 22);
+}
+
 class BotaoFiltro {
   constructor(rotulo, x, y, tipo) {
     this.rotulo = rotulo;
     this.x = x;
     this.y = y;
     this.largura = 100;
-    this.altura = 30;
+    this.altura = 35;
     this.tipo = tipo;
   }
 
   mostrar() {
-    fill(this.tipo === tipoSelecionado ? '#FFA500' : '#ffffff');
-    stroke(0);
+    fill(tipoSelecionado === this.tipo ? "#99cc99" : "#dddddd");
+    stroke(100);
     rect(this.x, this.y, this.largura, this.altura, 5);
+    
     fill(0);
     noStroke();
     textSize(14);
@@ -152,15 +132,12 @@ class BotaoFiltro {
     text(this.rotulo, this.x + this.largura / 2, this.y + this.altura / 2);
   }
 
-  foiClicado(mx, my) {
-    return mx > this.x && mx < this.x + this.largura && my > this.y && my < this.y + this.altura;
-  }
-}
-
-function mousePressed() {
-  for (let botao of botoes) {
-    if (botao.foiClicado(mouseX, mouseY)) {
-      tipoSelecionado = botao.tipo;
-    }
+  estaClicado(mx, my) {
+    return (
+      mx > this.x &&
+      mx < this.x + this.largura &&
+      my > this.y &&
+      my < this.y + this.altura
+    );
   }
 }
